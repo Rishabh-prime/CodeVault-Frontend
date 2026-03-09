@@ -1,16 +1,86 @@
-# React + Vite
+# CodeVault Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CodeVault is a developer workspace designed to help programmers manage coding problems, organize solutions, and track their learning progress. This repository contains the frontend application built with **React** and **Tailwind CSS**, providing a clean and responsive dashboard where users can manage coding questions, create folders, track tasks, and run code using an integrated compiler.
 
-Currently, two official plugins are available:
+The goal of CodeVault is to create a centralized environment for developers to practice coding, store solutions, and organize their learning workflow efficiently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+* User Authentication (Login / Signup)
+* Developer Dashboard
+* Question Management (Add, Edit, Delete)
+* Folder-based Organization for Questions
+* Task Management System
+* Integrated Code Editor
+* Code Execution with Output Display
+* Responsive Dashboard UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+Frontend technologies used in this project:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React (Vite)
+* Tailwind CSS
+* React Router
+* Axios
+* Monaco Editor (for code editing)
+
+## Project Structure
+
+src
+components/
+pages/
+services/
+features/
+utils/
+
+## Getting Started
+
+### 1. Clone the repository
+
+git clone https://github.com/yourusername/codevault-frontend.git
+
+### 2. Navigate to the project directory
+
+cd codevault-frontend
+
+### 3. Install dependencies
+
+npm install
+
+### 4. Start the development server
+
+npm run dev
+
+The application will run on:
+
+http://localhost:5173
+
+## Backend Repository
+
+The backend API for this project is available here:
+
+CodeVault Backend → (Add backend repo link here)
+
+## Project Goal
+
+This project was built to strengthen skills in:
+
+* React architecture
+* Component-based design
+* State management
+* API integration
+* Building real-world developer tools
+
+## Future Improvements
+
+* Public solution sharing
+* Comment system
+* Folder sharing
+* Code playground (HTML/CSS/JS)
+* Progress analytics dashboard
+
+## Author
+
+Rishabh Thakur
+Frontend Developer
