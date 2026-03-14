@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import api from "../Services/api"; // adjust path if needed
 
 function SignupPage() {
   const [formData, setFormData] = useState({
@@ -8,21 +9,36 @@ function SignupPage() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setError(""); // clear error on change
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would normally send data to backend
-    console.log("Form submitted:", formData);
-    // Reset form (optional)
-    // setFormData({ name: "", email: "", password: "" });
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      const response = await api.post("/auth/register", formData);
+      setSuccess("Account created successfully! Redirecting...");
+      console.log("Registered:", response.data);
+
+      // Optional: redirect after success
+      // setTimeout(() => window.location.href = "/login", 1500);
+    } catch (err) {
+      const message =
+        err.response?.data?.message || "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -39,6 +55,18 @@ function SignupPage() {
               Join us and start your journey
             </p>
           </div>
+
+          {/* Success / Error messages */}
+          {success && (
+            <div className="mb-4 px-4 py-3 rounded-lg bg-green-900/40 border border-green-700 text-green-400 text-sm text-center">
+              {success}
+            </div>
+          )}
+          {error && (
+            <div className="mb-4 px-4 py-3 rounded-lg bg-red-900/40 border border-red-700 text-red-400 text-sm text-center">
+              {error}
+            </div>
+          )}
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -119,20 +147,19 @@ function SignupPage() {
                   {showPassword ? "Hide" : "Show"}
                 </button>
               </div>
-              <p className="mt-1.5 text-xs text-zinc-500">
-                Minimum 8 characters
-              </p>
+              <p className="mt-1.5 text-xs text-zinc-500">Minimum 8 characters</p>
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
+              disabled={loading}
               className="w-full py-3.5 px-4 bg-white text-black font-medium
                        rounded-lg hover:bg-zinc-200 focus:outline-none focus:ring-2 
                        focus:ring-offset-2 focus:ring-offset-black focus:ring-white
-                       transition duration-200 mt-2"
+                       transition duration-200 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Create Account
+              {loading ? "Creating Account..." : "Create Account"}
             </button>
           </form>
 
@@ -150,10 +177,7 @@ function SignupPage() {
           </div>
         </div>
 
-        {/* Optional subtle branding / copyright */}
-        <p className="text-center text-zinc-600 text-xs mt-6">
-          © {new Date().getFullYear()} Your App • All rights reserved
-        </p>
+       
       </div>
     </div>
   );
