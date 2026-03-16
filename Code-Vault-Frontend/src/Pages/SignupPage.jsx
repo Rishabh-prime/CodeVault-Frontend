@@ -31,7 +31,7 @@ function SignupPage() {
       console.log("Registered:", response.data);
 
       // Optional: redirect after success
-      // setTimeout(() => window.location.href = "/login", 1500);
+      setTimeout(() => window.location.href = "/login", 1500);
     } catch (err) {
       const message =
         err.response?.data?.message || "Something went wrong. Please try again.";

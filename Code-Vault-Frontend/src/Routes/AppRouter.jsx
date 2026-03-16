@@ -3,6 +3,8 @@ import DashboardLayout from "../Layouts/DashboardLayout.jsx";
 
 import Signup from "../Pages/SignupPage.jsx";
 import Login from "../Pages/Login.jsx";
+// ! User Profile Page
+import UserProfile from "../Pages/UserProfile.jsx";
 // ! Home Page
 import Home from "../Pages/HomePage.jsx"
 
@@ -15,7 +17,9 @@ const AppRouter = () => {
 
         <Route element={<DashboardLayout />}>
           <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<UserProfile />} />
+
           <Route path="/" element={<Home />} />
         </Route>
       </Routes>
