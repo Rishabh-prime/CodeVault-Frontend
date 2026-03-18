@@ -7,6 +7,8 @@ import Login from "../Pages/Login.jsx";
 import UserProfile from "../Pages/UserProfile.jsx";
 // ! Home Page
 import Home from "../Pages/HomePage.jsx"
+import TaskPage from "../Pages/TaskPage.jsx";
+import FolderPage from "../Pages/FolderPage.jsx";
 
 
 const AppRouter = () => {
@@ -19,6 +21,8 @@ const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/tasks" element={<TaskPage />} />
+          <Route path="/folders" element={<FolderPage />} />
 
           <Route path="/" element={<Home />} />
         </Route>
