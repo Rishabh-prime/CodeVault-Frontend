@@ -7,8 +7,12 @@ import Login from "../Pages/Login.jsx";
 import UserProfile from "../Pages/UserProfile.jsx";
 // ! Home Page
 import Home from "../Pages/HomePage.jsx"
-import TaskPage from "../Pages/TaskPage.jsx";
 import FolderPage from "../Pages/FolderPage.jsx";
+import FilesPage from "../Pages/FilesPage.jsx";
+import EditorPage from "../Pages/EditorPage.jsx";
+import TasksPage from "../Pages/TasksPage";
+import PlaygroundPage from "../Pages/PlaygroundPage.jsx";
+
 
 
 const AppRouter = () => {
@@ -21,8 +25,13 @@ const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<UserProfile />} />
-          <Route path="/tasks" element={<TaskPage />} />
+          
           <Route path="/folders" element={<FolderPage />} />
+         <Route path="/folders/:folderId" element={<FilesPage />} />
+          <Route path="/files/:fileId" element={<EditorPage />} />
+          <Route path="/tasks" element={<TasksPage />} />
+          <Route path="/playground" element={<PlaygroundPage />} />
+        <Route path="/playground/:folderId" element={<PlaygroundPage />} />
 
           <Route path="/" element={<Home />} />
         </Route>

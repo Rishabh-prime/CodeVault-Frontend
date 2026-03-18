@@ -3,3 +3,20 @@
 body{
     background-color: black;
 }
+/* Custom scrollbar for task columns */
+.task-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.task-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-scroll::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 999px;
+}
+
+.task-scroll::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}

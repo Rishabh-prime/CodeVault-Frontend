@@ -84,27 +84,7 @@ function Hero() {
           Manage yourself.
         </p>
 
-        {/* CTA buttons — also fade in after typewriter */}
-        <div
-          className="flex items-center gap-4 mt-4 transition-all duration-700 delay-150"
-          style={{
-            opacity: done ? 1 : 0,
-            transform: done ? "translateY(0)" : "translateY(10px)",
-          }}
-        >
-          <Link
-            to="/signup"
-            className="px-7 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition duration-200 text-sm tracking-wide"
-          >
-            Get Started
-          </Link>
-          <Link
-            to="/login"
-            className="px-7 py-3 border-2 border-zinc-700 text-zinc-300 font-medium rounded-full hover:border-zinc-400 hover:text-white transition duration-200 text-sm tracking-wide"
-          >
-            Sign In
-          </Link>
-        </div>
+       
       </div>
 
       {/* Bottom fade */}

@@ -1,13 +1,13 @@
-import React from "react";
-import Hero from "../Components/HomePage/Hero";
+import { useSelector } from "react-redux";
+import Hero from "../Components/HomePage/Hero";       // adjust path if needed
+import FetchFolder from "../Components/HomePage/FetchFolder";  // adjust path if needed
 
-function HomePage(props) {
-  
+function HomePage() {
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   return (
     <>
-    <Hero />
-      <h1>Welcome to Code Vault</h1>
+      {isAuthenticated ? <FetchFolder /> : <Hero />}
     </>
   );
 }
