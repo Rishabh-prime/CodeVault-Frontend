@@ -8,7 +8,7 @@ import {
   removeTask,
   setLoading,
   setError,
-} from "../redux/slices/taskSlice";
+} from "../Redux/Slices/taskSlice";
 
 // ── Column config ─────────────────────────────────────────────────
 const COLUMNS = [
