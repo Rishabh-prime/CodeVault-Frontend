@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "@monaco-editor/react";
-import api from "../services/api";
+import api from "../Services/api";
 
 // ── Default starter code ──────────────────────────────────────────
 const DEFAULT_HTML = `<div class="container">
