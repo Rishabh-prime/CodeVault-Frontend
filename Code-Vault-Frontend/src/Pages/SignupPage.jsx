@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import api from "../Services/api";
 import { loginSuccess } from "../Redux/Slices/authSlice";
+import { Link } from "react-router-dom";
 
 function SignupPage() {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
@@ -142,7 +143,7 @@ function SignupPage() {
           <div className="mt-8 text-center">
             <p className="text-zinc-500 text-sm">
               Already have an account?{" "}
-              <a href="/login" className="text-white hover:text-zinc-300 font-medium transition">Sign in</a>
+              <Link to="/login" className="text-white hover:text-zinc-300 font-medium transition">Sign in</Link>
             </p>
           </div>
         </div>
