@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://codevault-backend-z348.onrender.com/api",
 });
 
 // Auto-attach JWT token to every request

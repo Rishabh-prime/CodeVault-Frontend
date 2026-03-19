@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Editor from "@monaco-editor/react";
-import api from "../services/api";
+import api from "../Services/api";
 
 // ── Language config with Judge0 language IDs ─────────────────────
 const LANGUAGES = [
