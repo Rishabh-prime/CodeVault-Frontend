@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import api from "../../services/api"; // adjust path if needed
+import api from "../../Services/api"; // adjust path if needed
 
 const COLORS = [
   "#ffffff", "#f87171", "#fb923c", "#facc15",
